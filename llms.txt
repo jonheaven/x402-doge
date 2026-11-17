@@ -1,0 +1,25 @@
+# x402-doge — x402 payments on Dogecoin
+
+Canonical public spec: https://github.com/jonheaven/x402-doge
+License: MIT
+Status: Draft 0.1.0. The reference verifier is untested and the examples are illustrative.
+
+## What it is
+- x402 v2 `exact` scheme on the Dogecoin network. x402 = HTTP 402 Payment Required (https://github.com/coinbase/x402, x402-foundation/x402).
+- Networks (CAIP-2): mainnet bip122:1a91e3dace36e2be3bf030a65679fe82, testnet bip122:bb0a78264637406b6360aad926284d54. asset "DOGE"; amount in koinu (1 DOGE = 100000000), minimum 1000000.
+- extra: assetTransferMethod "rawTransaction" (required), nonce (32 lowercase hex, required), validBefore (unix seconds string, required), minConfirmations (0..60, default 0; >=1 requires paymentFlow "upfront"), minFeePerKb (koinu string, default "1000000", minimum "100000").
+- payload: {"transaction": "<lowercase hex signed legacy raw tx>"}. Not a PSBT.
+- Binding: exactly one OP_RETURN, value 0, script 6a 15 78343032 01 <16-byte nonce>.
+- Exactly one output to payTo, with value == amount. Other outputs are P2PKH/P2SH and >= 100000 koinu.
+- Inputs P2PKH, SIGHASH_ALL, low-S strict DER. At 0-conf: all nSequence 0xffffffff and every prevout >= 1 confirmation.
+- Fee >= ceil(size*minFeePerKb/1000) + 1000000 per non-OP_RETURN output < 1000000 koinu; fee <= 100 DOGE. Size <= 100000 bytes.
+- The facilitator broadcasts (facilitator-submitted family); the payer pays the fee; the replay primitive is the spent outpoints plus the nonce; dedup on nonce + outpoints before broadcast.
+- Settle errors: settlement_pending (with txid), duplicate_settlement, invalid_transaction_state; scheme errors are invalid_exact_dogecoin_*.
+
+## Files
+- spec.md — normative spec (sections 1-16, appendices)
+- verify.mjs — reference verifier/settler (Node 18+, no deps): verifyWithCore, settleWithCore, supportedKinds, checkStatic, checkWithPrevouts, decodeTransaction
+- examples/*.json — PaymentRequired, PaymentPayload, verify/settle requests and responses, /supported
+
+## Out of scope
+- ÐMaps/ÐLand consensus (https://github.com/jonheaven/dmaps), on-chain games, DRC-20/tokens, custody, upto scheme, escrow flow, Dogecoin consensus changes

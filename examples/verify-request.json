@@ -1,0 +1,42 @@
+{
+  "x402Version": 2,
+  "paymentPayload": {
+    "x402Version": 2,
+    "resource": {
+      "url": "https://api.example.com/v1/bulk-export",
+      "description": "Example paid read: a bulk export from an indexer",
+      "mimeType": "application/json"
+    },
+    "accepted": {
+      "scheme": "exact",
+      "network": "bip122:1a91e3dace36e2be3bf030a65679fe82",
+      "amount": "100000000",
+      "asset": "DOGE",
+      "payTo": "DGNN7aN63MPcjnn5esF1RhKSmFbFDgcSbb",
+      "maxTimeoutSeconds": 120,
+      "extra": {
+        "assetTransferMethod": "rawTransaction",
+        "nonce": "3c9e1f0a7b5d4e2f8a6c1b0d9e7f5a34",
+        "validBefore": "1794936720",
+        "minConfirmations": 0
+      }
+    },
+    "payload": {
+      "transaction": "010000000122d8a5218bfe6bc0554227d3935852b2452f276df1e7ed7c1607387b59136a1b000000006b4830450221002b718cf5caa127d2ce6aa6499e771a114cd4c3994780714f357b35d707b946de02202d406e59d2ba565ec8faeb4b0080ba50312c53b0082a268838d5e7f85a261fa001210274494a95dc26680d5d13243de70c864b6d3c92fa85acb89f63165246d88c073cffffffff0300e1f505000000001976a9147b2bcac16c92057b710c86e02a6fced3f48d5b5188ac0000000000000000176a1578343032013c9e1f0a7b5d4e2f8a6c1b0d9e7f5a34c022be1d000000001976a914ad0d8398a69ca1926de34158bc74505ee96575b788ac00000000"
+    }
+  },
+  "paymentRequirements": {
+    "scheme": "exact",
+    "network": "bip122:1a91e3dace36e2be3bf030a65679fe82",
+    "amount": "100000000",
+    "asset": "DOGE",
+    "payTo": "DGNN7aN63MPcjnn5esF1RhKSmFbFDgcSbb",
+    "maxTimeoutSeconds": 120,
+    "extra": {
+      "assetTransferMethod": "rawTransaction",
+      "nonce": "3c9e1f0a7b5d4e2f8a6c1b0d9e7f5a34",
+      "validBefore": "1794936720",
+      "minConfirmations": 0
+    }
+  }
+}

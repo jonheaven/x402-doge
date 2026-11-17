@@ -1,0 +1,8 @@
+{
+  "success": false,
+  "errorReason": "settlement_pending",
+  "transaction": "26c42ddc597e60f210f8a15098edff637126a833a980efa5e8fb4662e56d37d9",
+  "network": "bip122:1a91e3dace36e2be3bf030a65679fe82",
+  "payer": "DLv7dRB8FLfnGiCaJziY14gK9czASCNxvi",
+  "amount": "2500000000"
+}

@@ -1,0 +1,24 @@
+{
+  "kinds": [
+    {
+      "x402Version": 2,
+      "scheme": "exact",
+      "network": "bip122:1a91e3dace36e2be3bf030a65679fe82",
+      "extra": {
+        "assetTransferMethod": "rawTransaction"
+      }
+    },
+    {
+      "x402Version": 2,
+      "scheme": "exact",
+      "network": "bip122:bb0a78264637406b6360aad926284d54",
+      "extra": {
+        "assetTransferMethod": "rawTransaction"
+      }
+    }
+  ],
+  "extensions": [],
+  "signers": {
+    "bip122:*": []
+  }
+}

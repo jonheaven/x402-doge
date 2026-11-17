@@ -1,0 +1,25 @@
+{
+  "x402Version": 2,
+  "error": "PAYMENT-SIGNATURE header is required",
+  "resource": {
+    "url": "https://api.example.com/v1/bulk-export",
+    "description": "Example paid read: a bulk export from an indexer",
+    "mimeType": "application/json"
+  },
+  "accepts": [
+    {
+      "scheme": "exact",
+      "network": "bip122:1a91e3dace36e2be3bf030a65679fe82",
+      "amount": "100000000",
+      "asset": "DOGE",
+      "payTo": "DGNN7aN63MPcjnn5esF1RhKSmFbFDgcSbb",
+      "maxTimeoutSeconds": 120,
+      "extra": {
+        "assetTransferMethod": "rawTransaction",
+        "nonce": "3c9e1f0a7b5d4e2f8a6c1b0d9e7f5a34",
+        "validBefore": "1794936720",
+        "minConfirmations": 0
+      }
+    }
+  ]
+}

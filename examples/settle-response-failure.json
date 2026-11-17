@@ -1,0 +1,7 @@
+{
+  "success": false,
+  "errorReason": "invalid_transaction_state",
+  "transaction": "",
+  "network": "bip122:1a91e3dace36e2be3bf030a65679fe82",
+  "payer": "DLv7dRB8FLfnGiCaJziY14gK9czASCNxvi"
+}
